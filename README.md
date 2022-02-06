@@ -34,4 +34,32 @@ Operations included:
 
 ### Using Command Line
 1. Navigate to the folder OOPSAssignment1/
-2. Run the test cases using the command : sbt clean compile test
+2. Run the test cases using the command - `sbt clean compile test`
+
+<u>NOTE: To test custom scenarios, please write the testcases in ComputationTest.scala </u>
+
+## <u>Files Used</u>
+
+* **Computation**: Create DSL for Set Operations
+* **ComputationTest**: Test DSL for Set Operations
+
+
+## <u>Code Structure</u>
+
+![](project/Code_Structure_1.png)
+
+1. Variable name
+2. Value to be assigned with the variable name
+3. Entry point to the function
+4. Assigns Set(1,2) to the variable A i.e A -> Set(1,2)
+
+---
+
+![](project/Code_Structure_2.png)
+
+1. Fetch the value of variable A assigned using syntax from above image
+2. Fetch the value of variable B assigned using syntax from above image
+3. Entry point to the function
+4. Perform Union of sets A and B
+5. Perform Symmetric Difference of sets A and B
+6. Cartesian product of the sets obtained as result of step 4 and 5
