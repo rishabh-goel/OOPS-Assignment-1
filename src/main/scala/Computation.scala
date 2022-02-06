@@ -23,7 +23,7 @@ object Computation:
     case Value(input: BasicType)                      // Get the value of the element passed
     case Variable(name: String)                       // Fetch a variable value from variableSetting Map
     case Check(list: SetExp, item: SetExp)            // Check if item present in set
-    case Create(name: String, item: SetExp)           // Create a variable and assign value to it
+    case Assign(name: String, item: SetExp)           // Assign value to a variable
     case Insert(set: SetExp, item: SetExp)            // Insert an item into the set
     case Delete(set: SetExp, item: SetExp)            // Delete an item from the set
     case Union(set1: SetExp, set2: SetExp)            // Union of 2 sets
@@ -54,7 +54,7 @@ object Computation:
           l.contains(item.eval)
         }
 
-        case Create(name, item) => {
+        case Assign(name, item) => {
           // Add the variable name and its value to the variableSetting map
           variableSetting += (name -> item.eval)
         }
@@ -154,7 +154,6 @@ object Computation:
 
   @main def runArithExp: Unit =
     import SetExp.*
-
 
 
 

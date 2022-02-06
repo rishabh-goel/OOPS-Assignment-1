@@ -1,7 +1,7 @@
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-import scala.Computation.SetExp.{Create, Cross, Delete, Diff, GetMacro, GetNamedScope, Insert, Intersect, SetAnonScope, SetMacro, SetNamedScope, Union, Value, Variable}
+import scala.Computation.SetExp.{Assign, Cross, Delete, Diff, GetMacro, GetNamedScope, Insert, Intersect, SetAnonScope, SetMacro, SetNamedScope, Union, Value, Variable}
 import scala.collection.mutable
 import scala.collection.mutable.Set
 
@@ -10,16 +10,16 @@ class ComputationTest extends AnyFlatSpec with Matchers{
   // Test 1
   it should "Check if sets are created" in {
     // Create Set A and check the result
-    assert(Create("A", Value(Set(1,2,3))).eval === mutable.HashMap("A" -> Set(1, 2, 3)))
+    assert(Assign("A", Value(Set(1,2,3))).eval === mutable.HashMap("A" -> Set(1, 2, 3)))
 
     // Create Set B and now the map should have both Set A and Set B
-    assert(Create("B", Value(Set(4,5,6))).eval === mutable.HashMap("A" -> Set(1, 2, 3), "B" -> Set(4, 5, 6)))
+    assert(Assign("B", Value(Set(4,5,6))).eval === mutable.HashMap("A" -> Set(1, 2, 3), "B" -> Set(4, 5, 6)))
   }
 
   // Test 2
   it should "Check the result of union and intersection operation" in {
     // Create a third set E
-    Create("E", Value(Set(1,5,6))).eval
+    Assign("E", Value(Set(1,5,6))).eval
 
     // Check for Union of 2 sets
     assert(Union(Variable("A"), Variable("B")).eval === Set(1, 2, 3, 4, 5, 6))
@@ -31,8 +31,8 @@ class ComputationTest extends AnyFlatSpec with Matchers{
   // Test 3
   it should "Check the result of difference and intersection operation" in {
     // Create 2 sets C and D
-    Create("D", Value(Set(1,5,6))).eval
-    Create("C", Value(Set(7,8,9))).eval
+    Assign("D", Value(Set(1,5,6))).eval
+    Assign("C", Value(Set(7,8,9))).eval
 
     // Check Symmetric Difference of set A and D
     assert(Diff(Variable("A"), Variable("D")).eval === Set(2, 3, 5, 6))
