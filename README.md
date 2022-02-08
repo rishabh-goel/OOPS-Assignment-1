@@ -1,6 +1,6 @@
 # CS 474 : HW1 by Rishabh Goel
 
-**SetEx** is a DSL(Domain Specific Language) developed for people who study Set Theory. This language will help people to run various set operations. 
+**Scaset** is a DSL(Domain Specific Language) developed for people who study Set Theory. This language will help people to run various set operations. 
 
 Operations included:
 
@@ -27,16 +27,24 @@ Operations included:
 
 ## <u>Instructions to Execute</u>
 
-### Using IntelliJ
+### <u>Testcases</u>
+#### Using IntelliJ
 1. Clone the repository from Github
 2. Open the project using IntelliJ.
 3. Run the testcases to see the result.
 
-### Using Command Line
+#### Using Command Line
 1. Navigate to the folder OOPSAssignment1/
 2. Run the test cases using the command - `sbt clean compile test`
 
-<u>NOTE: To test custom scenarios, please write the testcases in ComputationTest.scala </u>
+### <u>User execution</u>
+#### Using IntelliJ
+
+1. Import the following dependencies into your code:
+   1. `import scala.collection.mutable.Set`
+   2. `import scala.collection.mutable.Map`
+   3. `import SetExp.*`
+
 
 ## <u>Files Used</u>
 
