@@ -155,9 +155,6 @@ object Computation:
   @main def runArithExp: Unit =
     import SetExp.*
 
-    println(Assign("A", Value(Set(1,2))).eval)
-    println(Assign("B", Value(Set(3,4))).eval)
-    println(Cross(Union(Variable("A"), Variable("B")), Diff(Variable("A"), Variable("B"))).eval)
 
 
 
