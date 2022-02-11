@@ -60,7 +60,7 @@ object Computation:
         }
 
         case Insert(list, item) => {
-          // Upserting the variable with the new value
+          // Updating the variable with the new value
           variableSetting.update(list.eval, list.eval.asInstanceOf[Set[BasicType]] += item.eval)
 
           // Return the new value added
@@ -154,7 +154,6 @@ object Computation:
 
   @main def runArithExp: Unit =
     import SetExp.*
-
 
 
 
