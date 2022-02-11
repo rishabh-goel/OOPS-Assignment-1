@@ -9,7 +9,7 @@ Operations included:
 | :-------------: |:-------------:|
 | `Value(2)`      | Get the value of the item passed |
 | `Variable("A")`      | Get the value of a variable |
-| `Create("A", Value(Set(1,2,3)))` | Create a set |
+| `Assign("A", Value(Set(1,2,3)))` | Assign value to a set |
 | `Insert(Variable("A"), Value(4))` | Insert in a set |
 | `Delete(Variable("A"), Value(2))` | Delete from a set |
 | `Check(Variable("A"), Value(3))` | Check element in a set |
