@@ -40,10 +40,12 @@ Operations included:
 ### <u>User execution</u>
 #### Using IntelliJ
 
-1. Import the following dependencies into your code:
+Import the following dependencies into your code:
    1. `import scala.collection.mutable.Set`
    2. `import scala.collection.mutable.Map`
    3. `import SetExp.*`
+
+Note: If trying to perform some operation using a variable that has not been assigned, it will result in an error.
 
 
 ## <u>Files Used</u>
