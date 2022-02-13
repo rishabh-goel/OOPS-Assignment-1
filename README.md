@@ -7,21 +7,21 @@ Operations included:
 
 | OPERATION | DESCRIPTION |
 | :-------------: |:-------------:|
-| `Value(2)`      | Get the value of the item passed |
-| `Variable("A")`      | Get the value of a variable |
-| `Assign("A", Value(Set(1,2,3)))` | Assign value to a set |
-| `Insert(Variable("A"), Value(4))` | Insert in a set |
-| `Delete(Variable("A"), Value(2))` | Delete from a set |
-| `Check(Variable("A"), Value(3))` | Check element in a set |
-| `Union(Variable("A"), Variable("B"))` | Union of 2 sets |
-| `Intersection(Variable("A"), Variable("B"))` | Intersection of 2 sets |
-| `Diff(Variable("A"), Variable("B"))` | Symmetric Difference of 2 sets |
-| `Cross(Variable("A"), Variable("B"))` | Cartesian Product of 2 sets |
-| `SetMacro("delete", Delete(Variable("A"), Value(1)))` | Initialize a Macro |
-| `GetMacro("delete")` | Fetch a Macro by name |
-| `SetNamedScope("inner", Union(Variable("A"), Variable("B")))` | Initialize a named scope |
-| `GetNamedScope("inner")` | Fetch a named scope |
-| `SetAnonScope(Union(Value(Set(5)), Value(Set(10))))` | Initialize an anonymous scope |
+| `Value(2).eval()`      | Get the value of the item passed |
+| `Variable("A").eval()`      | Get the value of a variable |
+| `Assign("A", Value(Set(1,2,3))).eval()` | Assign value to a set |
+| `Insert(Variable("A"), Value(4)).eval()` | Insert in a set |
+| `Delete(Variable("A"), Value(2)).eval()` | Delete from a set |
+| `Check(Variable("A"), Value(3)).eval()` | Check element in a set |
+| `Union(Variable("A"), Variable("B")).eval()` | Union of 2 sets |
+| `Intersection(Variable("A"), Variable("B")).eval()` | Intersection of 2 sets |
+| `Diff(Variable("A"), Variable("B")).eval()` | Symmetric Difference of 2 sets |
+| `Cross(Variable("A"), Variable("B")).eval()` | Cartesian Product of 2 sets |
+| `SetMacro("delete", Delete(Variable("A"), Value(1))).eval()` | Initialize a Macro |
+| `GetMacro("delete").eval()` | Fetch a Macro by name |
+| `Scope(Union(Variable("A"), Variable("B"))).eval("inner")` | Compute result in a named scope |
+| `Scope(Union(Variable("A"), Variable("B"))).eval("")` | Compute result in an anonymous scope |
+| `Scope(Union(Variable("A"), Variable("B"))).eval()` | Compute result in default scope |
 
 
 
@@ -43,7 +43,7 @@ Operations included:
 Import the following dependencies into your code:
    1. `import scala.collection.mutable.Set`
    2. `import scala.collection.mutable.Map`
-   3. `import SetExp.*`
+   3. `import com.rishabh.hw1.Computation.SetExp.*`
 
 Note: If trying to perform some operation using a variable that has not been assigned, it will result in an error.
 
@@ -56,20 +56,35 @@ Note: If trying to perform some operation using a variable that has not been ass
 
 ## <u>Code Structure</u>
 
-![](project/Code_Structure_1.png)
+![](project/code_structure_img1.png)
 
 1. Variable name
 2. Value to be assigned with the variable name
-3. Entry point to the function
-4. Assigns Set(1,2) to the variable A i.e A -> Set(1,2)
+3. Entry point to the function with default scope
+4. Assigns Set(1,2) to the variable A i.e A -> Set(1,2) in default scope
 
 ---
+![](project/code_structure_img2.png)
 
-![](project/Code_Structure_2.png)
+1. Variable name
+2. Value to be assigned with the variable name
+3. Entry point to the function with scope_name = inner
+4. Assigns Set(1,2) to the variable A i.e A -> Set(1,2)
+5. Sets a scope variable A with value Set(1,2)
 
-1. Fetch the value of variable A assigned using syntax from above image
-2. Fetch the value of variable B assigned using syntax from above image
-3. Entry point to the function
-4. Perform Union of sets A and B
-5. Perform Symmetric Difference of sets A and B
-6. Cartesian product of the sets obtained as result of step 4 and 5
+---
+![](project/code_structure_img3.png)
+
+1. Fetch the value of variable A assigned using syntax from image 1
+2. Fetch the value of variable B assigned using syntax from image 2
+3. Perform Union of sets A and B
+4. Perform Symmetric Difference of sets A and B
+5. Cartesian product of the sets obtained as result of step 3 and 4
+6. Sets the result in default scope
+
+
+## <u>Future Enhancements</u>
+
+1. Implement code for nested scope
+2. Implement a cleaner code
+
