@@ -34,7 +34,7 @@ Operations included:
 3. Run the testcases to see the result.
 
 #### Using Command Line
-1. Navigate to the folder OOPSAssignment1/
+1. Navigate to the project folder
 2. Run the test cases using the command - `sbt clean compile test`
 
 ### <u>User execution</u>
