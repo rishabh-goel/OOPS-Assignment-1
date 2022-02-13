@@ -4,7 +4,7 @@ object Computation:
 
   import SetExp.*
 
-  // Aliasing 'Any' to void hardcoding of Variable types
+  // Aliasing 'Any' to avoid hardcoding of Variable types
   type BasicType = Any
 
   // Map to store the macros
